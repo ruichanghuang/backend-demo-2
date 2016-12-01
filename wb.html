@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>国信矿工后台</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <!--&lt;!&ndash; Font Awesome &ndash;&gt;-->
+  <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+  <!--&lt;!&ndash; Ionicons &ndash;&gt;-->
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">-->
+  <!-- Theme style -->
+  <!--<link rel="stylesheet" href="dist/css/AdminLTE.min.css">-->
+  <link rel="stylesheet" href="dist/css/AdminLTE.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="plugins/morris/morris.css">
+  <!-- jvectormap -->
+  <!--<link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">-->
+  <!-- Date Picker -->
+  <!--<link rel="stylesheet" href="plugins/datepicker/datepicker3.css">-->
+  <link rel="stylesheet" href="plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css"/>
+  <!-- Daterange picker -->
+  <!--<link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">-->
+  <!-- bootstrap wysihtml5 - text editor -->
+  <!--<link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">-->
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <link rel="stylesheet" href="css/backend.css"/>
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<style>
+  body , body * {
+    font-family: "微软雅黑",Helvetica,sans-serif;
+  }
+  /*.logo-lg {*/
+  /*font-family: "微软雅黑",Helvetica,sans-serif;*/
+  /*}*/
+</style>
+<body class="hold-transition skin-blue sidebar-mini">
+
+<div class="wrapper">
+  <!--<div style="width: 5000px;height: 100px;background: red">-->
+
+  <!--</div>-->
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>KG</b></span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg">国信矿工</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="images/defaulthead.png" class="user-image" alt="User Image">
+              <span class="hidden-xs">huangruichang</span>
+            </a>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <!--<div class="user-panel">-->
+      <!--<div class="pull-left image">-->
+      <!--<img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">-->
+      <!--</div>-->
+      <!--<div class="pull-left info">-->
+      <!--<p>Alexander Pierce</p>-->
+      <!--<a href="#"><i class="fa fa-circle text-success"></i> Online</a>-->
+      <!--</div>-->
+      <!--</div>-->
+      <!-- search form -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="搜索...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+        <li class="header">导航</li>
+        <li class="active treeview">
+          <a href="backend.html">
+            <i class="fa fa-dashboard"></i> <span>管理员</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="backend.html"><i class="fa fa-circle-o"></i>账号权限管理</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i>账号管理</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-bar-chart"></i>
+            <span>运营系统</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i> 用户管理</a></li>
+            <li><a href="wb.html"><i class="fa fa-circle-o"></i> 微博管理</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 评论管理</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 举报管理</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 敏感词管理</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 邀请管理</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 邀请详情管理</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 黑名单管理</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 群组管理</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 聊天记录</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-android"></i>
+            <span>升级系统</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i> 版本列表</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 升级策略</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> h5升级策略</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 上传管理</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> app配置</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> android热更新包管理</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> android热更新策略</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i>
+            <span>统计管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i> 销售统计管理</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> APP统计管理</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 随身云用户</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 员工使用情况</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 用户管理</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 对决结果</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 行为统计</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-bullhorn"></i>
+            <span>广告系统</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i> 广告位置管理</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 广告管理</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-bell-o"></i>
+            <span>推送管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i> 一般推送</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 生成页面</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 运营推送</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 已生成页面</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 推送管理</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-exclamation-circle"></i>
+            <span>错误上报</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i> 用户反馈</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 错误日志</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 错误设备</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        微博管理
+      </h1>
+      <!--<ol class="breadcrumb">-->
+      <!--<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>-->
+      <!--<li class="active">Dashboard</li>-->
+      <!--</ol>-->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <!--<div class="box-header">-->
+              <!--<h3 class="box-title">微博列表</h3>-->
+            <!--</div>-->
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="backend-form">
+                <div class="group">
+                  <label for="input-1">ID:</label>
+                  <input type="text" id="input-1">
+                </div>
+                <div class="group">
+                  <label for="input-2">用户ID:</label>
+                  <input type="text" id="input-2">
+                </div>
+                <div class="group">
+                  <label for="input-3">用户昵称:</label>
+                  <input type="text"id="input-3">
+                </div>
+                <div class="group">
+                  <label for="input-6">内容:</label>
+                  <input type="text" id="input-6">
+                </div>
+                <div class="group">
+                  <label for="input-4">客户端IP:</label>
+                  <input type="text" id="input-4">
+                </div>
+                <div class="group">
+                  <label for="input-5">排序元素:</label>
+                  <input type="text" id="input-5">
+                </div>
+                <div class="group">
+                  <label for="input-7">排序:</label>
+                  <select id="input-7">
+                    <option value="">~</option>
+                    <option value="comment_count">评论数</option>
+                    <option value="repost_count">转发数量</option>
+                    <option value="popular_sort">热度值</option>
+                  </select>
+                </div>
+                <div class="group">
+                  <label for="input-8">来源:</label>
+                  <select id="input-8">
+                    <option value="">~</option>
+                    <option value="1">android</option>
+                    <option value="2">ios</option>
+                    <option value="3">网页</option>
+                  </select>
+                </div>
+                <div class="group">
+                  <label for="input-9">是否审核:</label>
+                  <select id="input-9">
+                    <option value="">~</option>
+                    <option value="0">否</option>
+                    <option value="1">是</option>
+                  </select>
+                </div>
+                <div class="group">
+                  <label for="input-10">是否被删除</label>
+                  <select id="input-10">
+                    <option value="">~</option>
+                    <option value="0">否</option>
+                    <option value="1">是</option>
+                  </select>
+                </div>
+                <div class="group">
+                  <label for="input-11">时间起:</label>
+                  <input type="text" id="input-11"/>
+                </div>
+                <div class="group">
+                  <label for="input-12">时间止:</label>
+                  <input type="text" id="input-12"/>
+                </div>
+              </div>
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <td colspan="18">
+                    <ul class="pagination" style="margin:0;vertical-align: middle">
+                      <li><a href="#">«</a></li>
+                      <li><a href="#">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><a href="#">3</a></li>
+                      <li><a href="#">4</a></li>
+                      <li><a href="#">5</a></li>
+                      <li><a href="#">»</a></li>
+                    </ul>
+                                        <span>
+                                            共 81470 条记录 1/1630页
+                                        </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding-left:20px"><input id="selectAll" value="" type="checkbox"></td>
+                  <th>ID</th>
+                  <th>用户id</th>
+                  <th width="200">微博内容</th>
+                  <th width="150">发送图片</th>
+                  <th>评论数量</th>
+                  <th>转发数量</th>
+                  <th>被转发内容</th>
+                  <th>是否审核</th>
+                  <th>是否被删除</th>
+                  <th>股东发言</th>
+                  <th>关联股票</th>
+                  <th>关联组合</th>
+                  <th>客户端IP</th>
+                  <th>客户端类型</th>
+                  <th>热度值</th>
+                  <th>添加时间</th>
+                  <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87892" name="deleteid[]">
+                  </td>
+                  <td>87892</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥方正证券￥方正证券(601901)六连降后难自律:研究员违规直播荐股票 : 　　中国经济网编者按：近日，方正证券再次被湖南证监局采取出具警示函监管措施，这是方正证券12个月内收到的第二封警示函。而在在2016年券商评级结果中，方正证券被下调6级，从2015年的A类A级下调至C类C级，从而使方正证券的评级垫底24家上市券商。    　　除了去年违规接入场外配资信息系统外，方正证券还因收购民族证券之后的系列纠纷以及最重要的股东挪用资金而被多次处罚。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87892">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥方正证券￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:40:45</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87892" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87891" name="deleteid[]">
+                  </td>
+                  <td>87891</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥伊利股份￥光明乳业(600597)市场受挤压 销售管理费攀升管理层震荡 : 　　除了华东地区这一大本营，光明乳业在华南、华北、华中市场都面临着伊利、蒙牛与当地乳企的挤压。此时，光明乳业将推进“全产业链”发展作为公司一个重要发展战略，但要想实现全产业链化生产绝非易事    　　近几年来，国内乳企的日子并不如意，这主要因为国外低价奶源进口量大幅增加，国内奶源生产成本高且产能过剩。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87891">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥伊利股份￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:40:25</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87891" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87890" name="deleteid[]">
+                  </td>
+                  <td>87890</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=139329">139329</a></td>
+                  <td>￥欧菲光￥ #短线# ADTM上穿ADTMMA,表明该股票人气较高。根据ADTM指标定义是【买入】时机，建议您继续关注该股票。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87890">87889</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥欧菲光￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>5</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:40:19</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87890" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87889" name="deleteid[]">
+                  </td>
+                  <td>87889</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=142872">142872</a></td>
+                  <td>￥欧菲光￥ #短线# 后市有无机会可以进？</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87889">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥欧菲光￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>ios</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:40:19</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87889" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87888" name="deleteid[]">
+                  </td>
+                  <td>87888</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥诺德股份￥诺德股份(600110)股权分散重组频繁 铜箔第一股意欲何为 : 　　随着新能源汽车及锂电池产业的发展，被称为锂电池铜箔材料行业“第一股”的诺德投资股份有限公司（下称“诺德股份”，600110.SH）备受投资市场关注，近几个月股价翻番。    　　诺德股份目前的主营业务为铜箔材料及电线电缆材料的生产，铜箔约占主营74%，电线电缆约占14%，其中，80%的铜箔用于锂电铜箔，生产的锂电铜箔占市场份额约为30%。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87888">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥诺德股份￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:39:45</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87888" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87887" name="deleteid[]">
+                  </td>
+                  <td>87887</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥南大光电￥太平洋(601099)身涉欺诈发行 频违规曾保荐“最快变脸王” : 　　中国经济网编者按：对于IPO欺诈发行，证监会始终保持高压态势，但一些申请上市的企业仍在"顶风作案"。上周五，证监会公开表示对IPO申报企业龙宝参茸正式立案调查。太平洋证券作为龙宝参茸的保荐机构，恐难辞其咎。    　　值得一提的是，这是证监会部署IPO欺诈发行及信息披露违法违规专项执法行动以来，进入正式立案程序的首批案件。而作为唯一的一家IPO企业，龙宝参茸尤其引人关注。据了解，该公司涉嫌在招股说明书中虚假陈述，包括隐瞒重大担保事项、不实披露公司治理及内控情况等问题。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87887">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥南大光电￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:39:25</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87887" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87886" name="deleteid[]">
+                  </td>
+                  <td>87886</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥神州长城￥神州长城(000018):中标4.3亿元PPP项目 : 1、2016年10月21日收到赣州市南康区环宇招标代理有限公司出具的《中标通知》，确认公司（联合体：中城建业工程有限公司）中标“会昌县人民医院整体搬迁PPP项目”，总成交金额为43,017.34万元（人民币）。    　　2、本项目如能最终中标并顺利履行，预计将对公司未来的经营业绩产生积极影响，但对公司本年度经营业绩影响有限。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87886">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥神州长城￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:39:04</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87886" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87885" name="deleteid[]">
+                  </td>
+                  <td>87885</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥旗滨集团￥旗滨集团(601636):拟合资建设节能玻璃项目 : 　　公司、富隆国际、裕盛投资拟共同出资设立合资公司，注册资本12,000万元，其中公司出资5,760万元占注册资本的48%。此外，公司拟在马来西亚森美兰州合资建设马来西亚节能玻璃项目，项目总投资26,725万元。从当前东南亚的市场容量及社会节能意识的提高，节能玻璃有非常巨大的成长空间，本次投资具备较好的经济效益，预计实现年均销售收入22,046万元，年均净利润2,466万元，将为公司带来新的利润增长点，对股价影响正面。　　</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87885">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥旗滨集团￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:38:45</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87885" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87884" name="deleteid[]">
+                  </td>
+                  <td>87884</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥用友网络￥用友网络(600588):拟1.5亿设立有限合伙企业 : 　　公司拟与北京中关村大河资本投资管理中心(有限合伙)等22家合伙人共同投资设立北京中关村并购母基金投资中心(有限合伙)，公司出资额为1.5亿元人民币，占北京中关村并购母基金投资中心(有限合伙)的1.2%股权。中关村基金专注投资在中关村领先企业特定项目并购的并购子基金、中关村领先企业特定领域并购的并购子基金、认购中关村领先企业并购配套融资、支持大股东及管理层增强或保持其在中关村领先企业的控制力、通过利用现有渠道及自建渠道等多种形式支持中关村领先企业跨国并购等，有助于各合伙人实现资源互补，发挥协同效应亦，有助于公司构建企业互联网服务生态圈，但对股价影响或有限。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87884">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥用友网络￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:38:25</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87884" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87883" name="deleteid[]">
+                  </td>
+                  <td>87883</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=110275">110275</a></td>
+                  <td>￥大名城￥ #短线# 该股短线已有小部分盈利，上方受制于20天均线，成交量未有效放大，涨幅仍需大盘配合。注意9.4元和10元附近的压力。建议您继续/关注/</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87883">87815</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥大名城￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:37:59</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87883" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87882" name="deleteid[]">
+                  </td>
+                  <td>87882</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥特锐德￥特锐德(300001):1亿元参与发起设立财产保险公司 : 　　    　　1、三江财险注册资本拟定为人民币100,000万元，其中特锐德拟使用自有资金出资10,000万元，占三江财险注册资本的10%。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87882">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥特锐德￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:37:45</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87882" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87881" name="deleteid[]">
+                  </td>
+                  <td>87881</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=139329">139329</a></td>
+                  <td>￥欧菲光￥ #短线# ADTM上穿ADTMMA,表明该股票人气较高。根据ADTM指标定义是【买入】时机，建议您继续关注该股票。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87881">87880</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥欧菲光￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>5</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:37:27</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87881" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87880" name="deleteid[]">
+                  </td>
+                  <td>87880</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=142872">142872</a></td>
+                  <td>￥欧菲光￥ #短线# 现在持有，该怎么操作？</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87880">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥欧菲光￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>ios</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:37:27</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87880" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87879" name="deleteid[]">
+                  </td>
+                  <td>87879</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥比亚迪￥盐湖股份(000792):出资2.48亿元牵手比亚迪(002594)成立新公司 : 　　1、拟共同投资设立成立新公司青海盐湖比亚迪资源开发有限公司，注册资本50000万元，公司出资24750万元，合资公司专门从事盐湖资源综合利用产品的开发与加工、销售。    　　2、公司与锂资源下游企业加强深度合作和交流，有利于公司实现“镁锂钾园”战略目标。公司与比亚迪的战略合作，将有助于推动公司锂产业的技术、管理、市场等方面的优势与盐湖资源循环利用实现紧密结合。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87879">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥比亚迪￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:37:25</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87879" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87878" name="deleteid[]">
+                  </td>
+                  <td>87878</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥禾丰牧业￥禾丰牧业(603609):拟在菲律宾设立合资公司 : 　　公司与JhoensonSySiy、JohnDavidPodriguezComeque等菲律宾人于2016年10月20日在菲律宾马尼拉签订了订战略合作框架协议，合作各方将在菲律宾设立合资公司，公司名称为GOLDENHARVESTAINC.，注册资金为700万元人民币。合资公司计划首期投资额为6000万元人民币，公司出资2400万元人民币，占合资公司40%股份。本次合作有利于公司的海外业务拓展，实现优势互补，发挥协同优势。二级市场上，公司股价呈空头排列，建议保持审慎。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87878">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥禾丰牧业￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:37:03</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87878" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87877" name="deleteid[]">
+                  </td>
+                  <td>87877</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥万里扬￥万里扬(002434):募资收购奇瑞变速箱股权 : 　　1、公司拟通过向特定对象非公开发行股份和支付现金相结合的方式购买奇瑞股份持有的奇瑞变速箱100%股权，并募集配套资金不超过151,204.46万元。本次交易完成后，万里扬(002434)将持有奇瑞变速箱100%股权，奇瑞股份将成为上市公司股东。    　　2、经交易双方充分协商，奇瑞变速箱100%股权的整体价值按评估值确定为260,006.80万元。利润补偿期间为2016-2019年，奇瑞变速箱在利润补偿期间各年度的承诺净利润分别不低于2.00亿元、2.20亿元、2.42亿元和2.66亿元。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87877">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥万里扬￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:36:45</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87877" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87876" name="deleteid[]">
+                  </td>
+                  <td>87876</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥GQY视讯￥GQY视讯(300076)抢滩机器人蓝海 推出全球首款多维减震产品 : 人气爆棚的2016世界机器人大会,已成机器人企业实力比拼的大舞台。在机器人产业早有布局的GQY视讯,自然不敢怠慢。此次机器人大会上,GQY视讯展出了包括酒店机器人、银行机器人、机器人核心模块、大屏+AR解决方案、GQY云平台等在内的多项核心产品与技术,其最新发布“车载自平衡救护平台”更是标志着公司发展进入新阶段,吸引了业界人士的驻足围观和体验。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87876">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥GQY视讯￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:36:05</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87876" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87875" name="deleteid[]">
+                  </td>
+                  <td>87875</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥三爱富￥三爱富(600636)“三元并购”遭问询：是否刻意规避重组上市 : 作为重组新规发布后首个“投石问路”的“三元并购”案例,三爱富日前收到上交所的问询函。监管部门要求公司说明其重组方案中的股权转让、资产置入和置出等各项交易是否构成一揽子交易,其中是否存在刻意规避重组上市(即借壳)监管的情况,并要求公司召开媒体说明会。    9月30日,三爱富选在国庆假期之前披露了其“多头并进”的重大资产重组方案:首先是股权转让,大股东华谊集团将20%股权溢价出售给中国文化产业发展集团(简称“中国文发”),公司由上海市国资委控股变为国务院国资委控股;同时购买资产,公司拟以19亿元现金购买奥威亚100%股权,以3.57亿元现金购买成都东方闻道51%的股权,两标的公司均属于文化教育类资产,并且与新旧控股方皆无关联;还包括资产出售,公司拟以22.43亿元的价格将原有氟化工资产进行剥离,由华谊集团购买。尽管控股方和主营业务均发生变更,但公司认为,由于未发行股份且不构成重组上市,此次重大资产重组无需提交证监会并购重组委审核。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87875">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥三爱富￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:35:25</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87875" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87874" name="deleteid[]">
+                  </td>
+                  <td>87874</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥世纪游轮￥世纪游轮(002558)300亿海外豪赌逻辑探秘 : 世纪游轮日前宣布斥资305亿元收购海外著名游戏公司Alpha,将游戏行业的跨境并购推向新的高潮。今年以来,游戏公司海外豪赌不断,前三季度的并购交易额占据全球游戏行业并购的半壁江山。在此背后,对国内大型游戏公司而言,国内市场逐渐饱和,通过跨境并购寻找新的增长点成为当务之急。同时,在市场竞争加剧、洗牌不断的情况下,对于中小游戏公司而言,不出海就可能出局。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87874">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥世纪游轮￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:35:05</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87874" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87873" name="deleteid[]">
+                  </td>
+                  <td>87873</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥沙隆达Ａ￥一字板打开 机构撤离沙隆达A(000553) : 10月17日沙隆达A复牌后股价随即一字涨停,此后又连着收出了三个一字涨停板,10月21日该股开盘后曾打开涨停板,不过很快又再度封死涨停,报17.20元,成交额也显著放大,达到9.26亿元,刷新阶段新高。    沙隆达A发布公告称,公司拟以10.20元/股发行18.20亿股,作价28亿美元(折合人民币185.67亿元)收购公司间接控股股东中国农化持有的全球第七大农药生产商ADAMA(安道麦)100%股权;并拟以10.20元/股向芜湖信运汉石发行股份配套募资不超过25亿元,拟用于ADAMA主营业务相关的项目建设、农药产品注册登记等。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87873">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥沙隆达Ａ￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:34:44</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87873" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87872" name="deleteid[]">
+                  </td>
+                  <td>87872</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=139329">139329</a></td>
+                  <td>￥东莞控股￥ #短线# ADTM下穿ADTMMA,表明该股票人气较低。根据ADTM指标定义是【卖出】时机，建议您注意后市风险。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87872">87871</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥东莞控股￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>5</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:34:41</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87872" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87871" name="deleteid[]">
+                  </td>
+                  <td>87871</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=142872">142872</a></td>
+                  <td>￥东莞控股￥ #短线# 现在持有，该怎么操作？</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87871">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥东莞控股￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>ios</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:34:40</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87871" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87871" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87870" name="deleteid[]">
+                  </td>
+                  <td>87870</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=110275">110275</a></td>
+                  <td>￥金科股份￥ #短线# 该股回踩均线位置，短线可轻仓做多，持有可继续持有建议您继续/关注/</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87870">87462</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥金科股份￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:34:38</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87870" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87869" name="deleteid[]">
+                  </td>
+                  <td>87869</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥永大集团￥永大集团(002622)打造金融控股平台 : 永大集团近期动作频频,今年9月以来先后公告聘任高管人员、调整组织架构、变更公司名称及证券简称、增加经营范围、设立融资租赁公司及商业保理公司等。短期内各项措施并举,令投资者眼花缭乱,永大集团究竟有何“远大目标”?    在10月21日下午召开的股东大会上,永大集团新任董事长尹宏伟就发展战略进行了阐释:公司将以实现综合性的金融控股平台为战略目标,围绕电气实业、创新科技、金融服务三大业务板块做大做强。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87869">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥永大集团￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:34:24</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87869" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87868" name="deleteid[]">
+                  </td>
+                  <td>87868</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥司尔特￥司尔特(002538)控股权易手 袁启宏上位实控人 : 在停牌两周后,司尔特今日发布公告称,10月21日,公司控股股东宁国农资公司与国购产业控股有限公司(简称“产业控股”)签署了《股份转让协议》,宁国农资公司拟以15.8亿元向产业控股出售其所持有的司尔特25%股权。    此次股权转让后,产业控股持股25%,成为司尔特第一股东,宁国农资公司及其一致行动的持股比例将下滑至13.29%,司尔特的实际控制人也将由金国清变更为袁启宏。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87868">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥司尔特￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:34:05</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87868" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87867" name="deleteid[]">
+                  </td>
+                  <td>87867</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=142872">142872</a></td>
+                  <td>￥东莞控股￥ #短线# 现在持有，该怎么操作？</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87867">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥东莞控股￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>ios</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:33:54</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87867" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87866" name="deleteid[]">
+                  </td>
+                  <td>87866</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=110275">110275</a></td>
+                  <td>￥荣安地产￥ #短线# 该股回踩均线位置，短线可轻仓做多。建议您继续/关注/</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87866">87252</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥荣安地产￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:33:54</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87866" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87865" name="deleteid[]">
+                  </td>
+                  <td>87865</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥中国交建￥中国交建(601800)拟挂牌转让逾26亿元交运资产 : 北京产权交易所项目信息显示,中国交建分别挂牌转让佛山广明高速公路有限公司、重庆四航铜合高速公路投资有限公司、路桥建设重庆丰石高速公路发展有限公司、路桥建设重庆丰涪高速公路发展有限公司各85%股权,股权包价格合计达26.55亿元。    标的资产经营不佳</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87865">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥中国交建￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:33:05</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87865" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87864" name="deleteid[]">
+                  </td>
+                  <td>87864</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥上海医药￥上海医药(601607)参与Vitaco私有化获批 : 　　北京商报讯昨日，上海医药公告称，针对公司全资子公司SIICMedicalScienceandTechnology（Group）Ltd.（以下简称“SIIC”）与PrimaveraCapitalFundIIL.P.（以下简称“春华”）下属全资子公司PVZeusLimited（以下简称“Zeus”）拟共同私有化澳大利亚上市公司VitacoHoldingsLimited（以下简称“Vitaco”）一事，目前，Vitaco已经收到澳洲外国投资审查委员会（以下简称“FIRB”）发出的通知，批准本次交易。同时,公司已于10月20日就本次交易完成了在上海国资委的备案程序。上海医药指出，经FIRB审批通过并完成上海国资委备案程序后,本次交易仍需完成一系列惯常交割条件,包括Vitaco股东批准、澳大利亚联邦法院批准及新西兰海外投资者办公室（OIO）批准。因此本次交易依然存在一定不确定性。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87864">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥上海医药￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:32:25</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87864" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87863" name="deleteid[]">
+                  </td>
+                  <td>87863</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=110275">110275</a></td>
+                  <td><p><b>汇率、房地产只能保一个？
+                  </b></p><p><b>汇率和房地产的跷跷板是短期货币表象
+                  </b></p><p>汇率和房地产价格之间存在的跷跷板关系指的是，在一国房地产价格持续快速上涨，直至出现房地产泡沫的情况下，一旦因为外部冲击或者内部政策失当导致本国汇率出现贬值风险的时候，很难兼顾汇率和房地产价格实现共同稳定。我们认为汇率和房地产跷跷板是在货币环境宽松情况下在短期内的一种货币表象，<b>不是因果关系</b>，长期内房地产价格的走势和汇率关系不大。
+                  </p><p><b>房地产的长周期和短期影响因素不同
+                  </b></p><p>人均收入、物价以及人口等因素是决定房地产价格长期走势的根本逻辑。货币政策、利率以及汇率等因素是房价走势的短期逻辑，货币政策对房价既有直接/总量层面的影响，也有间接/配置层面的影响。货币政策对房地产价格向来有重要影响。首先，货币政策通过控制信贷总量、调节信贷成本，同时影响房地产企业和居民部门获得金融资源的难易程度，也影响预期，进而直接干预房地产市场价格的形成；其次，在货币政策调控下，金融市场的其他部分如股市、债市、商品市场、汇率市场等等有出现边际变化的可能，影响大类资产配置，间接影响房地产市场价格。
+                  </p><p><b>购买力平价不适用于房地产
+                  </b></p><p>我们认为购买力平价理论不适用于房地产市场。首先，房地产在不同国家很难用同一种商品来概述，房地产的价值中不仅仅包含了居住的价值，还含有医疗、教育、社会服务以及心理满足价值等其他附加价值。而这些构成房地产价值的不同细分项目在不同国家地区中的价值是有很大区别的，我们很难将不同国家的房地产称之为一种商品。我们发现即使不存在资本管制以及自由浮动汇率的情况下，房地产很难说表现出购买力平价的迹象。而我国目前存在部分资本管制的情况下，这种由房地产传导至汇率的路径是不畅通的，居民很难顺畅的将房地产资金转移至国外。
+                  </p><p><b>人民币汇率存在贬值压力，但是长期贬值基础不存在
+                  </b></p><p>随着美国经济的逐渐复苏，美联储开始了漫长的加息过程，美元的加息周期下全球流动性从新兴市场流出的过程给新兴市场带来了一定的考验，这是人民币贬值的基本逻辑。本轮人民币贬值的过程中，企业去美元负债以及居民配置海外资产成了人民币贬值的主力军，在整个贬值的主要逻辑里面，我们并没有看到房地产在其中发挥多大的作用。对于人民币汇率未来走势的基本判断中，未来美联储加息预期的因素还是占主导地位，我们预期美联储在今年年底还有一次加息窗口，在美联储加息之前我们预计人民币持续的贬值压力依然存在。但是这种压力相较前段时间已经缓解了不少，因为企业去外币负债已经进入了尾声，美国经济复苏的程度也没有想象中的那么美好，人民币汇率大幅贬值的基础并不存在。
+                  </p><p>风险提示：短期汇率贬值压力大，汇率冲击境内流动性。
+                  </p><p></p><p>来源：华泰宏观研究作者：李超&nbsp;宫飞
+                  </p><p><br></p></td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87863">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td></td>
+                  <td></td>
+                  <td>1</td>
+                  <td>android</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:32:03</td>
+                  <td>
+                    <a class="ajax" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87863" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87862" name="deleteid[]">
+                  </td>
+                  <td>87862</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥南山控股￥拟吸收合并深基地B(200053)再上层楼 南山控股(002314)静待地产+物流双主业格局 : 　　说起南山控股（002314，SZ），可能会有些投资者不怎么熟悉，但说起雅致股份这个名字，都应该耳熟能详了。2015年6月，雅致股份实际控制人中国南山集团，将其旗下房地产业务注入雅致股份，雅致股份随即更名为南山控股,形成了以房地产开发为主、集成房屋、船舶舾装及其他业务为一体的多元化、集团型企业。上市公司财务数据也以三级跳的方式完成爆发式增长，而今，南山控股更是启动资本运作2.0版本，拟换股吸收合并深基地B，将优质资源进一步整合，前景可期。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87862">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥南山控股￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:31:45</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87862" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87862" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87861" name="deleteid[]">
+                  </td>
+                  <td>87861</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥比亚迪￥盐湖股份(000792)联手比亚迪(002594)砸5亿找“锂” 高成本下仍有钱可赚 : 　　碳酸锂大热之下，国内钾肥巨头盐湖股份（000792，SZ）牵手比亚迪（002594，SZ）一起加大行业投入。    　　10月22日，盐湖股份发布公告称，与比亚迪、深圳市卓域成投资有限公司（以下简称深圳卓域成）拟共同投资设立新公司青海盐湖比亚迪资源开发有限公司(以下简称合资公司），注册资本5亿元，主要经营碳酸锂项目，成立后将启动3万吨碳酸锂项目建设。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87861">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥比亚迪￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:30:45</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87861" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87861" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87860" name="deleteid[]">
+                  </td>
+                  <td>87860</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥中国铝业￥全靠补贴 中国铝业(601600)连续4季实现盈利 : 　　依赖政府给予的巨额补贴，不少处于产能过剩行业的上市公司维持着微弱的盈利。这可以让上市公司摆脱可能退市的尴尬局面。中国铝业(601600.SH)就是其中一家。    　　近日，中国铝业公布了2016年第三季度报告，不同于去年同期9.75亿元的亏损，公司今年前三季度实现归属上市公司股东的净利润1.08亿元。这家资本市场上有名的“亏损王”自2015年四季度以来已经实现了连续4个季度单季度盈利为正。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87860">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥中国铝业￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:30:25</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87860" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87860" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87859" name="deleteid[]">
+                  </td>
+                  <td>87859</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥中国中车￥日媒关注中国大型央企重组:成化解产能过剩良好示范 : 　　参考消息网10月24日报道日媒称，母公司之间宣布进行业务整合的宝钢股份和武钢股份10月10日时隔约3个半月在上海股票市场复牌。两家企业股价在复牌之后迎来暴涨。这反映出市场对历史性的行业重组存在很高的期待。    　　据《日本经济新闻》网站10月20日报道，作为两家企业的母公司，宝钢集团和武汉钢铁集团合并后诞生的新公司“宝武钢铁集团”在粗钢产能方面仅次于欧洲的安赛乐米塔尔，成为世界第二大钢铁企业。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87859">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥中国中车￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:30:05</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87859" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87859" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87858" name="deleteid[]">
+                  </td>
+                  <td>87858</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥圣阳股份￥三星新手机电池转投LG 产业链公司迎良机 : 　　据媒体报道，为避免明年推出的GalaxyS8再出现Note7这种悲剧，三星正在与本国的智能手机大厂LG沟通，考虑在三星新型号手机中使用LG的电池，以保证三星手机的顺利使用和安全保障。    　　业内认为，若三星顺利使用了LG的电池，那么就会大量缩减三星对于其子公司三星SDI的依赖，据了解，三星智能手机约有百分之70%的智能手机都是用的三星SDI的电池。从三星这次的改动可以看到，他们已对SDI及</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87858">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥圣阳股份￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:29:45</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87858" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87858" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87857" name="deleteid[]">
+                  </td>
+                  <td>87857</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥新华保险￥君康人寿高层人事再现巨变 杉杉系资本出走扑朔迷离 : 　　君康人寿具有“杉杉系”背景的高层全部辞职，半年内，“杉杉系”资本对于公司的态度出现180度大转变，是被迫出局抑或主动放弃外界仍然不清楚    　　君康人寿自今年6月传出董事长郑永刚出走的消息以来，近期人事方面又有新变动。据知情人事透露，君康人寿总裁何志光，副总裁严锋、陆万春、武军在今年9月初应董事会要求提交了辞职报告。据了解，何志光和严锋目前正在等离任审计，郑永刚去向不明。近日，《投资者报》记者向君康人寿相关负责人求证相关信息的准确性，但并未得到明确答复。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87857">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥新华保险￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:29:25</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87857" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87857" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87856" name="deleteid[]">
+                  </td>
+                  <td>87856</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥伊利股份￥伊利股份(600887)遭阳光保险后首度复牌 涨近8% : 　　网易财经10月24日讯周一，伊利股份复牌，集合竞价期间涨停，报17.72元。开盘后快速下跌，截至发稿报17.39元，涨7.95%    　　事件回顾：</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87856">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥伊利股份￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:29:05</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87856" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87856" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87855" name="deleteid[]">
+                  </td>
+                  <td>87855</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥神州高铁￥神州高铁(000008)涨停 海淀区国资成第一大股东 : 　　中国证券网讯神州高铁周五晚间披露第一大股东将变更为北京市海淀区国有资产投资经营有限公司。公司今日开盘一字涨停，报10.66元，截至发稿成交2300万。    　　神州高铁10月21日晚间公告，公司实际控制人文炳荣及其一致行动人拟协议转让所持公司股份共计4.9亿股，占公司总股本的17.77%。转让完成后，北京市海淀区国有资产投资经营有限公司将为公司第一大股东，公司将无控股股东、实际控制人。公司股票将于10月24日复牌。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87855">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥神州高铁￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:28:45</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87855" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87855" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87854" name="deleteid[]">
+                  </td>
+                  <td>87854</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥美盈森￥美盈森(002303):在深圳重庆等地拥有约1000亩土地 : 　　全景网10月24日讯有投资者在全景网投资者互动平台向美盈森询问，公司有多少土地资产？    　　美盈森回应，公司拥有的土地使用权主要位于深圳、重庆、东莞、苏州、成都等地，总面积约1000亩左右；按照公司投资计划，下一步公司计划在郑州、长沙、佛山等地购置地块投资新建项目；另外，公司与有关方合作计划于深圳光明新区中山大学深圳校区旁约2000亩地块上投资建设相关项目。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87854">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥美盈森￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:28:25</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87854" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87854" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87853" name="deleteid[]">
+                  </td>
+                  <td>87853</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥江淮汽车￥三星电池出事新能源车也受伤 江淮汽车(600418)暂时停产IEV6S : 　　Note7手机的频频爆炸事件，让全世界都对三星电池的安全性心有余悸，甚至相关手机机型都被各国禁止使用。在中国汽车圈，正准备大展拳脚的三星电池，如今的日子也并不好过。据广州日报报道，配套三星SDI动力电池的本土车企新能源车，如今暂时停产，而相关法则也对“外资电池”sayno，这让韩系电池工厂遭遇大难题。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87853">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥江淮汽车￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:28:05</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87853" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87853" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87852" name="deleteid[]">
+                  </td>
+                  <td>87852</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥光线传媒￥获光线传媒(300251)两次入股 七维科技要把《鬼吹灯之龙岭迷窟》做成VR版 : 　　2016年被称为“VR元年”。但是这一风口的“风”渐渐缓和下来，VR内容的稀缺、头显分辨率和体验的尚待提升都需要时间去解决。    　　七维科技，一家成立于2014年的VR技术产品公司，2016年10月20日在光线传媒的演播厅，发布其Go!Pano系列产品，一款是“实时全景缝合软件Go!PanoStudio”，一款为“便携的专业级四目全景一体机Go!Pano</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87852">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥光线传媒￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:27:45</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87852" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87852" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87851" name="deleteid[]">
+                  </td>
+                  <td>87851</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥四川长虹￥长虹白电盈利能力持续改善  美菱电器(000521)前三季度营收增16.24% : 　　近日，长虹旗下美菱电器、华意压缩相继发布2016年三季报。报告显示，美菱1-9月实现营业收入99.97亿元，同比增长16.24%，归属于上市公司股东的净利润1.65亿元，同比增长1.72%。同时，作为全球冰箱的心脏，华意压缩前三季度实现营业收入51.54亿元，根据产业在线数据,华意压缩在国内冰箱压缩机市场占有率27.7%,继续保持行业龙头地位。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87851">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥四川长虹￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:27:25</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87851" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87851" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87850" name="deleteid[]">
+                  </td>
+                  <td>87850</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥中国平安￥平安证券今日召开董事会 曹实凡或担任董事长 : 　　继平安银行人士发生大变动之后，平安集团旗下另一重要子公司平安证券，也在近日迎来人事大调整。    　　10月23日，腾讯财经从多位与平安证券接近人士处获悉，平安证券现任党委书记曹实凡，或将在10月24日举行的平安证券董事会上，选举为新的董事，并在经过一系列监管和公司内部流程之后，正式接替谢永林，成为平安证券董事长。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87850">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥中国平安￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:27:05</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87850" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87850" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87849" name="deleteid[]">
+                  </td>
+                  <td>87849</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥东旭光电￥东旭蓝天(000040)继续停牌 重大项目或继续深耕新能源主业 : 　　10月24日，东旭蓝天继续停牌。10月19日晚间东旭蓝天披露了一则重大事项停牌公告，公司表示由于正在筹划非公开发行股票事宜，公司股票自10月20日开市起停牌，预计停牌时间不超过10个交易日。    　　早在2015年8月，东旭集团就以11.97亿元的总价从宝安地产（东旭蓝天前身）大股东中国宝安手中收购了宝安地产15%的股份，交易价格较当时市场价溢价约75.4%。2015年9月，东旭集团又以11.67亿元的价格从宝安地产二股东东鸿信手里买下14.89%的股份，自此成为宝安地产无可争议的控股股东，合计持股29.88%。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87849">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥东旭光电￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:26:45</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87849" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87849" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87848" name="deleteid[]">
+                  </td>
+                  <td>87848</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥达实智能￥达实智能(002421):智慧医疗布局有望持续深入 目标价10元 : 　　本次评级：增持    　　上次评级：增持</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87848">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥达实智能￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:26:25</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87848" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87848" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87847" name="deleteid[]">
+                  </td>
+                  <td>87847</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥西王食品￥西王食品(000639)两周暴涨70%背后:从中粮弘毅手中抢走Kerr : 　　斥资近49亿元收购加拿大食品生产商Kerr的方案公布后，10月11日复牌的山东食用油生产商西王食品，股价一路走高，5个涨停板过后，上周再涨24%。    　　近日，西王食品董事长王棣首次对记者公开披露了公司收购加拿大Kerr公司的幕后故事，“并购这个项目的时候，竞争者很多，中国的像中粮、联想旗下的弘毅资本、美国的KKR，总共有二十多家，竞争非常激烈。”</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87847">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥西王食品￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:26:05</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87847" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87847" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87846" name="deleteid[]">
+                  </td>
+                  <td>87846</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=142872">142872</a></td>
+                  <td>￥山西汾酒￥ #短线# 现在持有，该怎么操作？</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87846">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>是</td>
+                  <td>￥山西汾酒￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>ios</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:25:53</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87846" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87846" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87845" name="deleteid[]">
+                  </td>
+                  <td>87845</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥胜利精密￥胜利精密(002426):增持苏州捷力 打造湿法隔膜龙头 : 　　事件：胜利精密(002426)拟出资4.86亿元收购苏州捷力33.77%的股权，完成后合计持有苏州捷力84.77%；承诺业绩16-18年分别为1.3亿、1.69亿、2.2亿；同时苏州捷力将在二级市场购买胜利精密(002426)股票2.5亿元，彰显胜利精密(002426)的投资价值。    　　技术+资本打造湿法隔膜全球龙头。苏州捷力为湿法隔膜龙头，良率超80%，下游客户包括CATL、比亚迪、力神、LG、三星等。目前公司产能近2亿平米，年底可增至3亿平米以上，三元动力电池需求的爆发促使湿法隔膜长期供不应求。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87845">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥胜利精密￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:25:45</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87845" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87845" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87844" name="deleteid[]">
+                  </td>
+                  <td>87844</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥天音控股￥学习OPPO加码线下?魅族接受手机分销商天音控股(000829)的投资 : 　　在激烈的中国手机市场中，制造商魅族试图融得更多资金，以支撑其从竞争对手手中夺下更多市场份额的庞大计划。    　　这一次，包括手机分销商天音控股在内的四家投资主体向魅族公司投入了约5.37亿元人民币，并向部分原有股东支付对价，以获得魅族约2.9%的股份。这是深交所上市公司“天音控股”（000829.SZ）所披露的信息。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87844">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥天音控股￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:25:25</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87844" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87844" title="删除">删除</a>-->
+                  </td>
+                </tr><tr>
+                  <td>
+                    <input class="chkbox" type="checkbox" value="87843" name="deleteid[]">
+                  </td>
+                  <td>87843</td>
+                  <td><a href="/index.php?m=&amp;c=user&amp;a=index&amp;id=145935">145935</a></td>
+                  <td>￥青青稞酒￥青青稞酒(002646)明年美国开卖  西方人愿意喝吗? : 　　青青稞酒（002646.SZ）在美国卖白酒的计划有眉目了。    　　青海互助青稞酒股份有限公司海外事业部副总经理鄂雷日前向第一财经记者透露，目前该公司针对美国市场，已开发了3款类型的白酒产品，预计明年可以上市，希望能够改变白酒出口华人喝的局面。此前根据海关统计，2015年白酒出口总量已是2009年的4倍，但依然没有突破华人圈，未能实现真正的走出去。</td>
+                  <td></td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td><a href="/index.php?m=&amp;c=Weibo&amp;a=index&amp;id=87843">0</a></td>
+                  <td>是</td>
+                  <td>否</td>
+                  <td>否</td>
+                  <td>￥青青稞酒￥</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>网页</td>
+                  <td>0</td>
+                  <td>2016-10-25 17:24:45</td>
+                  <td>
+                    <a class="ajax" ajaxtarget="#aDialog" href="/index.php?m=&amp;c=Weibo&amp;a=add&amp;id=87843" title="编辑">编辑</a>
+                    <!-- <a class='ajaxConfirm priv' href="/admin/del?id=87843" title="删除">删除</a>-->
+                  </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <td colspan="18">
+                    <ul class="pagination" style="margin:0;vertical-align: middle">
+                      <li><a href="#">«</a></li>
+                      <li><a href="#">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><a href="#">3</a></li>
+                      <li><a href="#">4</a></li>
+                      <li><a href="#">5</a></li>
+                      <li><a href="#">»</a></li>
+                    </ul>
+                                            <span>
+                                                共 81470 条记录 1/1630页
+                                            </span>
+                  </td>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+</div>
+<!-- jQuery 2.2.3 -->
+<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Bootstrap 3.3.6 -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- Morris.js charts -->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>-->
+<!--<script src="plugins/morris/morris.min.js"></script>-->
+<!-- Sparkline -->
+<!--<script src="plugins/sparkline/jquery.sparkline.min.js"></script>-->
+<!-- jvectormap -->
+<!--<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>-->
+<!--<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>-->
+<!-- jQuery Knob Chart -->
+<!--<script src="plugins/knob/jquery.knob.js"></script>-->
+<!-- daterangepicker -->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>-->
+<!--<script src="plugins/daterangepicker/daterangepicker.js"></script>-->
+<!-- datepicker -->
+<!--<script src="plugins/datepicker/bootstrap-datepicker.js"></script>-->
+<script src="plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<!--<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>-->
+<!-- Slimscroll -->
+<!--<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>-->
+<!-- FastClick -->
+<!--<script src="plugins/fastclick/fastclick.js"></script>-->
+<!-- AdminLTE App -->
+<script src="dist/js/app.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<!--<script src="dist/js/pages/dashboard.js"></script>-->
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<script>
+//  $('#start-time').datetimepicker({
+  $('#input-11').datetimepicker({
+    language:  'zh-CN',
+    todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    format: 'yyyy-mm-dd',
+    maxView: 3,
+    minView: 2
+  });
+
+  //$('#end-time').datetimepicker({
+  $('#input-12').datetimepicker({
+    language:  'zh-CN',
+    todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    format: 'yyyy-mm-dd',
+    maxView: 3,
+    minView: 2
+  });
+</script>
+</body>
+</html>

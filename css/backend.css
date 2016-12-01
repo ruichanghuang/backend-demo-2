@@ -1,0 +1,47 @@
+
+body {
+  overflow: auto;
+}
+
+.main-header {
+  position: fixed;
+  width: 100%;
+}
+
+.content-wrapper, .right-side {
+  margin-top: 50px;
+  min-width: 1200px;
+}
+
+.content-wrapper .content .box .box-body .group {
+  display: inline-block;
+  margin: 5px 0;
+}
+
+.content-wrapper .content .box .box-body input[type="text"],
+.content-wrapper .content .box .box-body select {
+  display: inline-block;
+  width: 100px;
+  border-radius: 0;
+  box-shadow: none;
+
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+}
+
+@media (min-width: 768px) {
+  .sidebar-collapse .right-side {
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
+
+.backend-form {
+  margin-bottom: 10px;
+}
